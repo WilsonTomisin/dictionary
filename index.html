@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@200&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Martian Mono', monospace;
+            margin: 0px;
+        }
+        #Container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(201, 202, 206, 0.939);
+            border-radius: 10px;
+            padding: 25px 50px;
+            box-shadow: 0px 0px 50px gray;
+            transition: all 1s ease-in-out;
+        }
+        #Container:hover{
+            box-shadow: 0px 0px 50px black;
+        }
+        .inputField{
+            all: unset;
+            border-bottom: 2px solid black;
+            /* display: block; */
+            transition: all 1s ease-in-out;
+        }
+        .inputField:hover{
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        .search-btn{
+            /* all: unset;
+            padding: 5px 25px;
+            color: white;
+            background-color: darkblue;
+            border-radius: 7px; */
+            all: unset;
+            transition: 1s all ease-in-out;
+            
+        }
+
+        .fade{
+            z-index: 1;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(20, 20, 20, 0.7);
+            display: none;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        .Modal{
+            background-color: rgba(2, 4, 62, 0.9);
+            padding: 30px 20px;
+            border-radius: 10px;
+            color: white;
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .fade .Modal div{
+            margin-bottom: 15px;
+            /* border-bottom: 1px solid white; */
+            padding-bottom: 10px;
+        }
+        .fade .Modal .word{
+            font-size: 45px;
+            transition: 1s all ease-in-out;
+        }
+        .Modal{
+            transition: all 2s ease-in-out;
+        }
+        .Modal:hover{
+            background-color: rgba(255, 255, 255, 0.8);
+            /* box-shadow: 0px 0px 50px black; */
+            color: darkblue;
+
+        }
+        span{
+            color: grey;
+            font-weight: 600;
+        }
+        .close-btn{
+            all: unset;
+            padding: 5px 25px;
+            border-radius: 7px;
+            background-color: white;
+            color: black;
+            transition: 0.5s all ease-in-out;
+        }
+        .close-btn:hover{
+            background-color: darkblue;
+            color: white;
+            box-shadow: 0px 0px 10px grey;
+        }
+        .search-btn:hover{
+            color: white;
+            /* box-shadow: 0px 0px 20px grey; */
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="Container">
+        <input type="text" class="inputField" placeholder="search a word..">
+        <button class="search-btn"> <i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="result"></div>
+        
+    </div>
+    <div class="fade">
+        <div class="Modal">
+            <div class="word"></div>
+            <div class="transcript">
+                Transcription: <span class="transcript-E"></span>
+            </div>
+            <div class="elements">
+                part of speech:<div class="partOfSpeech" style="color: grey;"></div>
+                Synonyms:<span class="synonyms"></span>
+            </div>
+            <div class="definition">
+                Definition: <span class="definition-E"></span>
+            </div>
+    
+            <div class="examples">
+                Example: <span class="examples-E"></span>
+            </div>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
